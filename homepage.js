@@ -29,6 +29,7 @@ const videos = {
 // Function to update the video source properly
 function setVideo(videoUrl) {
     videoSource.src = videoUrl;
+    backgroundVideo.load();
     backgroundVideo.play();
 }
 
