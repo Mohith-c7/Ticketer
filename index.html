@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="firebase.js" defer></script>
+
+</head>
+
+<body>
+    <div class="logo-container">
+        <img src="tll.png" alt="Brand Logo">
+    </div>
+    
+    <div class="card" id="login-card">
+        <h1 id="signin-header">Sign In</h1>
+        <p id="signin-error-message" style="color: red; display: none;"></p>
+        <input type="email" placeholder="Enter Email id" id="signinemail">
+        <input type="password" name="" id="signinpass" placeholder="Enter Password" id="signinpass">
+        <h5 id="forgotpassword">Forgot Password?</h5>
+        <button id="signinbutton">Login</button>
+        <p id="signup">New to Ticketer? <span class="bold-text" id="show-signup">Sign up now</span></p>
+    </div>
+    
+    <div class="card hidden" id="signup-card">
+        <h1 id="signup-header">Sign Up</h1>
+        <p id="signup-error-message" style="color: red; display: none;"></p>
+        <input type="text" id="name" placeholder="Enter Name">
+        <input type="email" id="emailid" placeholder="Enter Email id">
+        <input type="password" id="pass" placeholder="Set Password">
+        <input type="text" id="confirmpass" placeholder="Confirm Password">
+        <button id="signupbutton">Sign Up</button>
+        <p id="signin">Already have an account? <span class="bold-text" id="show-login">Sign in</span></p>
+    </div>
+
+    <div class="card hidden" id="forgot-password-card">
+        <h1 id="forgot-password-header">Forgot Password</h1>
+        <p id="forgot-error-message" style="color: red; display: none;"></p>
+        <input id="emailinput" type="email" placeholder="Enter Email Id">
+        <button id="send-link-btn">Send Reset Link</button>
+        <p id="back-to-login">Remember Password?<span id="sign-in-back">Sign In</span></p>
+    </div>
+
+    <div class="card hidden" id="VerifyEmailCard">
+        <h1 id="verifyEmail">Verify Email</h1>
+        <p id="email-ver-notice">A verification link has been sent to your registered Email</p>
+        <button id="verify-Email-btn">Back to sign In</button>
+    </div>
+
+    <div class="card hidden" id="resetPassCard">
+        <h1 id="verifyEmail">Reset Password</h1>
+        <p id="email-ver-notice">A reset link has been sent to your registered Email</p>
+        <button id="reset-pass-btn">Back to sign In</button>
+    </div>
+
+    
+</body>
+</html>

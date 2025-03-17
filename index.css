@@ -1,0 +1,230 @@
+body {
+    background-color: #262626;
+    height: 100vh;
+    display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'poppins';
+           
+                background-image: url('bgg.jpg');
+                background-size: 100%;  
+                background-position: center; 
+                background-repeat: no-repeat;  
+                height: 100vh; 
+                margin: 0;       
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.logo-container {
+    position: absolute; /* Adjust based on layout */
+    top: 44px;
+    left: 80px;
+}
+
+.logo-container img {
+    width: 208px; /* Adjust size */
+    height: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 430px; 
+    height: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.824);
+    margin-top: 130px;
+    border-radius: 7px;
+    transition: transform 0.4s ease-out, opacity 0.4s, visibility 0.4s;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.151);
+    border: 1px solid #262626; 
+    color: #999999;
+    padding: 8px 10px 5px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    outline: none;
+    margin: 16px 10px 10px 10px;
+}
+
+input::placeholder {
+    color: 999999;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#forgotpassword {
+    color: rgb(255, 255, 255);
+    margin-top: 1px;
+    width: 320px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+#forgotpassword:hover {
+    cursor: pointer;
+    color: #e50000bb;
+}
+
+#signin-header{
+    color: rgb(255, 255, 255);
+    text-align: left;
+    width: 325px;
+    font-weight: 600;
+    margin-top: 64px;
+}
+
+button {
+    width: 330px;
+    height: 40px;
+    background-color: #E50000; 
+    color: rgb(237, 233, 233);
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #892222;
+    transition-duration: 1ms;
+}
+
+#signup{
+    margin-top: 16px;
+    color: #999999;
+    font-weight: 400;
+    width: 325px;
+    margin-bottom: 64px;
+}
+
+#signup :hover {
+    cursor: pointer;
+    color: #e50000b7;
+}
+
+.bold-text {
+    font-weight: 450;
+    color: rgb(230, 227, 223);
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+.fade {
+    opacity: 1;
+    transition: opacity 0.3s linear;   
+}
+
+#signin {
+    margin-top: 16px;
+    color: #999999;
+    font-weight: 400;
+    width: 325px;
+    margin-bottom: 48px;
+}
+
+#signin :hover {
+    cursor: pointer;
+    color: #e50000b7;
+}
+
+#signupbutton {
+    margin-top: 26px;
+}
+
+#signup-header {
+    color: rgb(255, 255, 255);
+    text-align: left;
+    width: 325px;
+    font-weight: 600;
+    margin-top: 34px;
+}
+
+#forgot-password-header, #verifyEmail{
+    color: rgb(255, 255, 255);
+    width: 325px;
+    font-weight: 600;
+    margin-top: 64px;
+    margin-bottom: 18px;
+}
+
+#reset-password-button{
+    width: 330px;
+    height: 40px;
+    background-color: #E50000; 
+    color: rgb(237, 233, 233);
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 26px;
+}
+
+#back-to-login , #back-to-login-otp{
+    margin-top: 16px;
+    color: #999999;
+    font-weight: 400;
+    width: 325px;
+    margin-top: 16px; 
+    margin-bottom: 38px;
+}
+
+#sign-in-back{
+    font-weight: 450;
+    color: rgb(230, 227, 223);
+}
+
+#sign-in-back:hover{
+    color: #e50000b7;
+    cursor: pointer;
+}
+
+#send-link-btn, #verify-Email-btn {
+    margin-top:26px;
+}
+
+#verify-Email-btn{
+    margin-bottom: 48px;
+}
+
+#email-ver-notice{
+    margin-top: 16px;
+    color: #999999;
+    font-weight: 400;
+    width: 325px;
+    margin-bottom: 48px;
+}
+
+#reset-pass-btn{
+    margin-bottom: 48px;
+}
+
+#signin-error-message{
+    align-self: flex-start;
+    margin-left: 54px;
+}
+
+#signup-error-message{
+    align-self: flex-start;
+    margin-left: 54px;
+}
+
+#forgot-error-message{
+    align-self: flex-start;
+    margin-left: 54px;
+}
