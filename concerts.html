@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketer</title>
+    <link rel="stylesheet" href="concerts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="navbar-background-shape"></div>
+    <nav class="navbar">
+        <a href="homepage.html" class="nav-item active">Home</a>
+        <a href="movies.html" class="nav-item">Movies</a>
+        <a href="concerts.html" class="nav-item">Concerts</a>
+        <a href="sports.html" class="nav-item">Sports</a>
+    </nav>
+    <img src="tll.png" class="hp-logo">
+    <div class="profile">
+        <button class="profile-btn"><i class="fa-regular fa-user" style="color: #000000;"></i></button>
+    </div>
+
+    <section class="concerts-section">
+        <h2>Concerts</h2>
+        <div class="concerts-container" id="concertsContainer">
+            <!-- Concerts will be dynamically added here -->
+        </div>
+    </section>
+
+    <section class="footer">
+        <img src="tll.png" alt="Ticketer" class="footer-logo" >
+        <div class="button-container">
+            <button class="view-tech-stack">View Tech Stack</button>
+            <button class="view-dev-info">View Dev Info</button>
+        </div>
+        <h1>DEVELOPED BY TEAM BACK</h1>
+    </section>
+
+    <script type="module" src="concerts.js"></script>
+</body>
+</html>
