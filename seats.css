@@ -1,0 +1,782 @@
+.navbar {
+    background-color: #1a1a1a;
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: 2px solid #808080;
+    position:fixed;
+    top: 22px;  /* Adjust as needed */
+    left: 50%; transform: translateX(-50%); /* Adjust as needed */
+    z-index: 1000;
+}
+
+.nav-item {
+    color: #999999;
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: 400;
+   
+}
+
+.profile-btn{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    right: 48px;
+    top: 22px;
+    z-index: 900;
+
+}
+
+.hp-logo {
+    position: fixed; 
+    top: 30px;
+    left: 4.5%;
+    width: 208px;
+    height: auto;
+    z-index: 999;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.nav-item:hover {
+    background-color: #474747;
+    color: #FFFFFF;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Seat Selection Section */
+.seat-selection {
+    flex: 2;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 72px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-info {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.seating-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.seat.available {
+    background-color: #444;
+    border: 1px solid #555;
+}
+
+.seat.selected {
+    background-color: #ffd700;
+}
+
+.seat.reserved {
+    background-color: #333;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+.screen-container {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.screen-container p {
+    margin-bottom: 15px;
+}
+
+.screen {
+    height: 10px;
+    background: linear-gradient(to right, #00ffcc, #00ccff);
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Movie Info Section */
+.movie-info {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    color: white;
+    border-left: 1px solid #333;
+}
+
+.movie-poster {
+    width: 160px;
+    height : 200px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.movie-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.movie-format {
+    color: #ccc;
+}
+
+.theater-info {
+    margin-top: 20px;
+}
+
+.theater-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.show-time, .screen-details {
+    color: #ccc;
+    margin-bottom: 5px;
+}
+
+
+
+.pay-btn {
+    position: relative;
+    padding: 12px;
+    padding-right: -10%;
+    font-size: 16px;
+    background: #0b0b0b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  .pay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  .icon-container {
+    position: relative;
+    width: 14px;
+    height: 24px;
+  }
+  
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    color: #22c55e;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .default-icon {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Hover animations */
+  .pay-btn:hover .icon {
+    animation: none;
+  }
+  
+  .pay-btn:hover .wallet-icon {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .pay-btn:hover .card-icon {
+    animation: iconRotate 2.5s infinite;
+    animation-delay: 0s;
+  }
+  
+  .pay-btn:hover .payment-icon {
+    animation: iconRotate 2.5s infinite;
+    animation-delay: 0.5s;
+  }
+  
+  .pay-btn:hover .dollar-icon {
+    animation: iconRotate 2.5s infinite;
+    animation-delay: 1s;
+  }
+  
+  .pay-btn:hover .check-icon {
+    animation: iconRotate 2.5s infinite;
+    animation-delay: 1.5s;
+  }
+  
+  /* Active state - show only checkmark */
+  .pay-btn:active .icon {
+    animation: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .pay-btn:active .check-icon {
+    animation: checkmarkAppear 0.6s ease forwards;
+    visibility: visible;
+  }
+  
+  .btn-text {
+    font-weight: 600;
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+  }
+  
+  @keyframes iconRotate {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px) scale(0.5);
+    }
+    5% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    15% {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+    20% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px) scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px) scale(0.5);
+    }
+  }
+  
+  @keyframes checkmarkAppear {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) rotate(-45deg);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .movie-info {
+        order: -1;
+        border-left: none;
+        border-bottom: 1px solid #333;
+    }
+}
+
+/*NEW
+
+/* Add this class to elements while loading */
+.loading-text {
+    position: relative;
+    color: transparent !important;
+    background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Fade in animation when content loads */
+  .loaded {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Add this to your CSS */
+.movie-poster {
+    width: 160px;
+    height : 200px;
+    background-color: #eee;
+    margin-bottom: 20px;
+
+  }
+  
+  /* Loading animation for the poster before it loads */
+  .movie-poster.loading-text {
+    width: 160px;
+    height: 200px;
+    background-color: transparent !important;
+    margin-bottom: 20px;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  /* Keep your existing animation keyframes */
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  
+
+
+
+  /* From Uiverse.io by zaeniahmad-id */ 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 26px;
+    max-width: 450px;
+    box-shadow: 
+      0px 10px 25px rgba(0, 0, 0, 0.1),
+      0px 20px 48px rgba(0, 0, 0, 0.1),
+      0px 30px 60px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: cardAppear 0.8s forwards;
+  }
+  
+  @keyframes cardAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .modal:hover .form {
+    transform: translateY(-10px);
+  }
+  
+  .payment--options {
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  margin: 0 auto;
+  }
+  
+  .payment--options button {
+    flex: 1;
+  max-width: 100px;
+  height: 55px;
+  background: #f2f2f2;
+  border-radius: 11px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ transition: all 0.5s ease;
+  }
+  
+  .payment--options button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment--options button svg {
+    height: 18px;
+  }
+  
+  .payment--options button:last-child svg {
+    height: 22px;
+  }
+  
+  .separator {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 10px;
+    color: #8b8e98;
+    margin: 0;
+  }
+  
+  .separator > p {
+    word-break: keep-all;
+    display: block;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    margin: auto;
+  }
+  
+  .separator .line {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #e8e8e8;
+    margin: auto;
+  }
+  
+  .credit-card-info--form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input_container {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .split {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: 15px;
+  }
+  
+  .split input {
+    width: 100%;
+  }
+  
+  .input_label {
+    font-size: 12px;
+    color: #8b8e98;
+    font-weight: 600;
+  }
+  
+  .input_field {
+    width: auto;
+    height: 40px;
+    padding: 0 0 0 16px;
+    border-radius: 9px;
+    outline: none;
+    background-color: rgba(242, 242, 242, 0.8);
+    border: 1px solid rgba(229, 229, 229, 0);
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  
+  .input_field:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 0px 2px #242424;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .purchase--btn {
+    height: 55px;
+    background: #f2f2f2;
+    border-radius: 11px;
+    border: 0;
+    outline: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    background: linear-gradient(180deg, #363636 0%, #1b1b1b 50%, #000000 100%);
+    box-shadow:
+      0px 0px 0px 0px #ffffff,
+      0px 0px 0px 0px #000000;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  
+  .purchase--btn:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+  }
+  
+  /* Reset input number styles */
+  .input_field::-webkit-outer-spin-button,
+  .input_field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .input_field[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+
+  /* Success Animation Styles */
+.success-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .checkmark-circle {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+  }
+  
+  .checkmark {
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    transform: rotate(45deg);
+    left: 25px;
+    top: 5px;
+  }
+  
+  .checkmark:before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 0;
+    background-color: #00c2cb;
+    left: 0;
+    top: 40px;
+    animation: checkmark-before 0.4s ease-in-out forwards;
+    animation-delay: 0.2s;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #00c2cb;
+    left: 0;
+    top: 80px;
+    animation: checkmark-after 0.4s ease-in-out forwards;
+    animation-delay: 0.6s;
+  }
+  
+  .success-message {
+    font-size: 24px;
+    color: #00c2cb;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fade-in 0.5s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+  
+  @keyframes checkmark-before {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 40px;
+    }
+  }
+  
+  @keyframes checkmark-after {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 40px;
+    }
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .confirmation-card {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+}
+
+.confirm-content {
+    position: relative;
+}
+
+.confirm-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.confirm-movie-img {
+    width: 100px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.confirm-movie-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.confirm-theater-location,
+.confirm-selected-seats {
+    margin: 5px 0;
+}
+
+.confirm-pay-btn {
+    background-color: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
