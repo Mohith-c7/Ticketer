@@ -168,7 +168,24 @@ body {
     font-size: 48px;
 }
 
-.tech-card {
+.tech-card1 {
+    background:transparent;
+    border-color: linear-gradient(90deg, #ff0000, #1a1a1a);
+    border-radius: 12px;
+    padding: 30px;
+    width: 330px;
+    height: 380px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tech-card2 {
     background:transparent;
     border-color: linear-gradient(90deg, #ff0000, #1a1a1a);
     border-radius: 12px;
@@ -186,21 +203,21 @@ body {
 }
 
 
-.tech-card img {
+.tech-card1 img, .tech-card2 img {
     width: 140px;
     height: 150px;
     margin-bottom: 15px;
     border-radius: 6px;
 }
 
-.tech-card h3 {
+.tech-card1 h3, .tech-card2 h3  {
     color: white;
     font-size: 22px;
     margin: 0;
 }
 
 
-.tech-card:hover {
+.tech-card1:hover, .tech-card2:hover {
     transform: scale(1.03);
     box-shadow: 0 0 22px rgba(255, 0, 0, 0.9);
 }
