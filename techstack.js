@@ -67,3 +67,23 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "devinfo.html"; 
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the button
+    const button = document.querySelector(".tech-card1");
+
+    // Add event listener to redirect when clicked
+    button.addEventListener("click", function () {
+        window.location.href = "https://www.linkedin.com/in/mohith-kumar-chadalawada-37a90b2a1/?originalSubdomain=in"; 
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Select the button
+    const button = document.querySelector(".tech-card2");
+
+    // Add event listener to redirect when clicked
+    button.addEventListener("click", function () {
+        window.location.href = "https://www.linkedin.com/in/sri-harsha-tummalapalli-40371727a/"; 
+    });
+});
