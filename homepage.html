@@ -22,6 +22,14 @@
     <div class="profile">
         <button class="profile-btn"><i class="fa-regular fa-user" style="color: #000000;"></i></button>
     </div>
+    <div class="d-flex align-items-center location-box">
+        <span class="spinner-border spinner-border-sm text-secondary me-2" 
+              id="locationSpinner" 
+              role="status"></span>
+        <div id="locationDisplay" >
+          Fetching location...
+        </div>
+    </div>
     <div class="hero-section">
         <video class="background-video" autoplay muted loop id="AVCT">
             <source src="AVCT.mp4" type="video/mp4">
