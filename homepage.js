@@ -1,6 +1,6 @@
 console.log("JS file loaded successfully");
 
-// Video Handling
+
 document.addEventListener("DOMContentLoaded", function () {
     const backgroundVideo = document.querySelector(".background-video");
     console.log("Background video element:", backgroundVideo);
@@ -19,7 +19,7 @@ const backgroundVideo = document.querySelector(".background-video");
 const videoSource = backgroundVideo.querySelector("source");
 const imageBoxes = document.querySelectorAll(".image-box");
 
-// Mapping images to corresponding videos
+
 const videos = {
     "ogthumbnail.jpg": "ogteaser.mp4",
     "hit3thumbnail.png": "hit3teaser.mp4",
@@ -33,7 +33,7 @@ function setVideo(videoUrl) {
     backgroundVideo.play();
 }
 
-// Click event for images
+
 imageBoxes.forEach((imageBox) => {
     imageBox.addEventListener("click", () => {
         const imageSrc = imageBox.getAttribute("src");
