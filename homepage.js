@@ -342,3 +342,52 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "devinfo.html"; 
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const locationDisplay = document.getElementById("locationDisplay");
+    const locationSpinner = document.getElementById("locationSpinner");
+
+    function updateLocation(city) {
+        locationDisplay.innerText = city || "City not found";
+        locationSpinner.style.display = "none"; // Hide spinner
+    }
+
+    function getCityByGPS() {
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    const { latitude, longitude } = position.coords;
+                    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+
+                    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Location Data:", data); 
+                            if (data.address && data.address.city) {
+                                updateLocation(data.address.city);
+                            } else if (data.address && data.address.town) {
+                                updateLocation(data.address.town);
+                            } else if (data.address && data.address.village) {
+                                updateLocation(data.address.village);
+                            } else {
+                                updateLocation("City not found");
+                            }
+                        })
+                        .catch(error => {
+                            console.error("Error fetching city:", error);
+                            updateLocation("Error fetching location");
+                        });
+                },
+                error => {
+                    console.warn("Geolocation Error:", error);
+                    updateLocation("Location permission denied");
+                }
+            );
+        } else {
+            updateLocation("Geolocation not supported");
+        }
+    }
+
+
+    getCityByGPS();
+});
