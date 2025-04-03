@@ -40,7 +40,31 @@
     right: 48px;
     top: 22px;
     z-index: 900;
+    .profile-btn{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    right: 48px;
+    top: 22px;
+    z-index: 900;
+    background-image: url('mohith.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
+.profile-btn:hover{
+    width: 70px;
+    height: 70px;
+    top: 15px;
+    right: 48px;
+}
 }
 
 .hp-logo {
@@ -86,7 +110,7 @@ body {
     overflow: hidden;
 }
 
-/* Seat Selection Section */
+
 .seat-selection {
     flex: 2;
     color: white;
@@ -174,7 +198,6 @@ body {
     width: 100%;
 }
 
-/* Movie Info Section */
 .movie-info {
     flex: 1;
     padding: 20px;
@@ -221,8 +244,6 @@ body {
     color: #ccc;
     margin-bottom: 5px;
 }
-
-
 
 .pay-btn {
     position: relative;
@@ -412,7 +433,7 @@ body {
     }
   }
   
-  /* Add this to your CSS */
+
 .movie-poster {
     width: 160px;
     height : 200px;
@@ -421,7 +442,7 @@ body {
 
   }
   
-  /* Loading animation for the poster before it loads */
+
   .movie-poster.loading-text {
     width: 160px;
     height: 200px;
@@ -431,8 +452,7 @@ body {
     outline: none !important;
     box-shadow: none !important;
   }
-  
-  /* Keep your existing animation keyframes */
+
   @keyframes loading {
     0% {
       background-position: 200% 0;
