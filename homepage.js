@@ -357,12 +357,12 @@ document.addEventListener("DOMContentLoaded", function () {
             navigator.geolocation.getCurrentPosition(
                 position => {
                     const { latitude, longitude } = position.coords;
-                    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+                    console.log(`Latitude: ${latitude}, Longitude: ${longitude}`); // Debugging
 
-                    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`)
+                    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&accept-language=en`)
                         .then(response => response.json())
                         .then(data => {
-                            console.log("Location Data:", data); 
+                            console.log("Location Data:", data); // Debugging
                             if (data.address && data.address.city) {
                                 updateLocation(data.address.city);
                             } else if (data.address && data.address.town) {
@@ -388,6 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    // Call function on page load
     getCityByGPS();
 });
+
