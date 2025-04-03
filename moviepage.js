@@ -1,8 +1,8 @@
-// ✅ Import Firebase (Modular)
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getFirestore, collection, doc, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
-// ✅ Firebase Configuration
+
 const firebaseConfig = {
     apiKey: "AIzaSyDqHCYvL1VCg0izImgnxnnnLN_O3Ep2rco",
     authDomain: "ticketer-e269a.firebaseapp.com",
@@ -13,15 +13,15 @@ const firebaseConfig = {
     measurementId: "G-M8RMRWHMP8"
 };
 
-// ✅ Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// ✅ Get Movie ID from URL
+
 const urlParams = new URLSearchParams(window.location.search);
 const movieId = urlParams.get("id");
 
-console.log("🎬 Movie ID from URL:", movieId); // ✅ Debugging
+console.log("🎬 Movie ID from URL:", movieId); 
 
 if (!movieId) {
     console.error("❌ No Movie ID found in URL!");
@@ -30,7 +30,6 @@ if (!movieId) {
     fetchMovies(movieId);
 }
 
-// ✅ Fetch Movie Details
 async function fetchMovies(movieId) {
     try {
         const movieRef = doc(db, "Movies", movieId);
@@ -62,8 +61,6 @@ async function fetchMovies(movieId) {
                 trailerElement.play().catch(error => console.error("Autoplay blocked:", error));
 
             }
-
-            // ✅ Fetch Theatres after fetching movie details
             fetchTheatres(movieId);
         } else {
             console.error("❌ Movie document NOT FOUND in Firestore.");
@@ -75,7 +72,7 @@ async function fetchMovies(movieId) {
     }
 }
 
-// ✅ Fetch Theatres & Timings (Correct Placement)
+
 async function fetchTheatres(movieId) {
     try {
         const theatresRef = collection(db, "Movies", movieId, "Theatres");
@@ -83,7 +80,7 @@ async function fetchTheatres(movieId) {
 
         if (querySnapshot.empty) {
             console.log("❌ No theatres found for this movie.");
-            document.getElementById("theatre-list").innerHTML = "<p>No theatres available.</p>";
+            document.getElementById("theatre-list").innerHTML = '<p style="color: white; font-size: 24px;">No theatres available.</p>';
             return;
         }
 
@@ -93,14 +90,13 @@ async function fetchTheatres(movieId) {
             return;
         }
 
-        theatreContainer.innerHTML = ""; // Clear existing data
+        theatreContainer.innerHTML = ""; 
 
-        // ✅ Loop through each theatre
+    
         for (const theatreDoc of querySnapshot.docs) {
             const theatreData = theatreDoc.data();
             console.log("🎭 Theatre:", theatreData);
 
-            // ✅ Create theatre card
             const theatreElement = document.createElement("div");
             theatreElement.classList.add("theater");
             theatreElement.innerHTML = `
@@ -112,13 +108,11 @@ async function fetchTheatres(movieId) {
                 <div class="showtimes"></div> <!-- Empty container for showtimes -->
             `;
 
-            // ✅ Append theatre to container first
+
             theatreContainer.appendChild(theatreElement);
 
-            // ✅ Get the `.showtimes` div from this specific theatre card
             const showtimesContainer = theatreElement.querySelector(".showtimes");
 
-            // ✅ Fetch all showtimes from Timings subcollection
             const timingsRef = collection(db, `Movies/${movieId}/Theatres/${theatreDoc.id}/Timings`);
             const timingsSnapshot = await getDocs(timingsRef);
 
@@ -127,7 +121,6 @@ async function fetchTheatres(movieId) {
                     const timingData = timingDoc.data();
                     console.log("⏰ Showtime Data:", timingData);
 
-                    // ✅ Create a button for each showtime
                     const button = document.createElement("button");
                     button.classList.add("showtime-btn");
                     button.innerHTML = `
@@ -152,11 +145,8 @@ async function fetchTheatres(movieId) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const navItems = document.querySelectorAll(".nav-item");
-
-    // Get the current page URL
     const currentPage = window.location.pathname.split("/").pop();
 
-    // Set active class based on URL
     navItems.forEach(item => {
         if (item.getAttribute("href") === currentPage) {
             item.classList.add("active");
@@ -226,10 +216,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Select the button
     const button = document.querySelector(".view-dev-info");
 
-    // Add event listener to redirect when clicked
     button.addEventListener("click", function () {
         window.location.href = "devinfo.html"; 
     });
@@ -238,16 +226,12 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const navItems = document.querySelectorAll(".nav-item");
 
-    // Get the current page URL
     const currentPage = window.location.pathname.split("/").pop();
 
-    // Set active class based on URL
     navItems.forEach(item => {
         if (item.getAttribute("href") === currentPage) {
             item.classList.add("active");
         }
-
-        // Save the active tab on click
         item.addEventListener("click", function () {
             localStorage.setItem("activeNav", this.getAttribute("href"));
         });
