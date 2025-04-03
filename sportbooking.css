@@ -65,7 +65,32 @@ body {
     padding: 20px;
 }
 
-/* Match Card Styles */
+.profile-btn{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    right: 48px;
+    top: 22px;
+    z-index: 900;
+    background-image: url('mohith.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-btn:hover{
+    width: 70px;
+    height: 70px;
+    top: 15px;
+    right: 48px;
+}
+
 .match-card {
     display: flex;
     margin-top: 3%;
@@ -174,7 +199,6 @@ body {
     margin-left: 15%;
 }
 
-/* Event Description Styles */
 .event-description {
     margin-bottom: 40px;
 }
@@ -207,7 +231,6 @@ body {
     font-size: 12px;
 }
 
-/* Event Guide Styles */
 .event-guide {
     margin-bottom: 40px;
 }
